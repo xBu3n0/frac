@@ -10,6 +10,8 @@
 
 #define PI -3.1415926
 
+int iter;
+
 struct point
 {
     double x;
@@ -18,6 +20,8 @@ struct point
 
 int main()
 {		
+    scanf("%d", &iter);
+
     glfwInit();
     GLFWwindow * window = glfwCreateWindow(WIDTH, HEIGHT, "Koch curve", NULL, NULL);
 
@@ -33,7 +37,7 @@ int main()
     koch.push_back({.x = 20, .y = HEIGHT/2.-100});
     koch.push_back({.x = WIDTH-20, .y = HEIGHT/2.-100});
 
-    for(int i = 0; i < 6; ++i)
+    for(int i = 0; i < iter; ++i)
     {
         std::vector<point> aux;
 
